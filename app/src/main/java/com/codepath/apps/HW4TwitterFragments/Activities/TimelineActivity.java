@@ -24,8 +24,8 @@ import java.util.ArrayList;
 
 public class TimelineActivity extends ActionBarActivity {
 
-    private TwitterClient client;
-    private TweetsListFragment fragmentTweetsList;
+    //private TwitterClient client;
+    //private TweetsListFragment fragmentTweetsList;
 
 
     @Override
@@ -39,8 +39,9 @@ public class TimelineActivity extends ActionBarActivity {
         getSupportActionBar().setTitle(R.string.home);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        //get the client
+/*        //get the client
         client = TwitterApplication.getRestClient();
+
 
         //if savedInstanceState is not null, that means this activity is already exist, saved in memory, then no need to recreate this activity
         if(savedInstanceState == null)
@@ -50,11 +51,11 @@ public class TimelineActivity extends ActionBarActivity {
         }
 
         populateTimeLine();
-
+*/
 
     }
 
-
+/*
     // Append more data into the adapter
     public void customLoadMoreDataFromApi(int offset)
     {
@@ -87,9 +88,9 @@ public class TimelineActivity extends ActionBarActivity {
         }, offset);
 
     }
+*/
 
-
-    // send an API request to get the timeline json
+    /*// send an API request to get the timeline json
     // fill the listview by createing the tweet objects from the json
     private void populateTimeLine()
     {
@@ -121,6 +122,7 @@ public class TimelineActivity extends ActionBarActivity {
             }
         }, 1);
     }
+*/
 
     public void onComposeAction(MenuItem mi)
     {
@@ -130,15 +132,17 @@ public class TimelineActivity extends ActionBarActivity {
         startActivityForResult(intent, RESULT_OK);
     }
 
+    /*
     public void onRefreshAction(MenuItem mi)
     {
         populateTimeLine();
     }
+*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_timeline, menu);
+        //getMenuInflater().inflate(R.menu.menu_timeline, menu);
         return true;
     }
 
