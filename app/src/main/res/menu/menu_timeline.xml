@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.codepath.apps.HW4TwitterFragments.activity.TimelineActivity">
+
+    <!-- showAsAction: ifRoom - show if there is room, never - never show icon, withText - show title, always - always show icon -->
+
+    <item
+        android:id="@+id/action_refresh"
+        android:title="@string/compose"
+        android:icon="@mipmap/ic_refresh"
+        android:onClick="onRefreshAction"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/action_compose"
+        android:title="@string/compose"
+        android:icon="@mipmap/ic_compose"
+        android:onClick="onComposeAction"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+</menu>
