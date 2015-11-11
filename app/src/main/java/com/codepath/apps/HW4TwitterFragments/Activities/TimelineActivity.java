@@ -28,10 +28,6 @@ public class TimelineActivity extends ActionBarActivity {
     private TweetsListFragment fragmentTweetsList;
 
 
-//    private ArrayList<Tweet> tweets;
-  //  private TweetsArrayAdapter aTweets;
-   // private ListView lvTweets;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,18 +48,6 @@ public class TimelineActivity extends ActionBarActivity {
             //access the fragment
             fragmentTweetsList = (TweetsListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_timeline);
         }
-
-
-/*
-        //find listview
-        lvTweets = (ListView)findViewById(R.id.lvTweets);
-        //connect adapter to listview
-        lvTweets.setAdapter(aTweets);
-        //create arraylist (data source)
-        tweets = new ArrayList<>();
-        //construct the adapter from data source
-        aTweets = new TweetsArrayAdapter(this, tweets);
-*/
 
         populateTimeLine();
 
