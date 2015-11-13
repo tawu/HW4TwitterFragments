@@ -7,26 +7,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.codepath.apps.HW4TwitterFragments.Fragments.HomeTimelineFragment;
 import com.codepath.apps.HW4TwitterFragments.Fragments.MentionsTimelineFragment;
-import com.codepath.apps.HW4TwitterFragments.Fragments.TweetsListFragment;
-import com.codepath.apps.HW4TwitterFragments.Helper.EndlessScrollListener;
 import com.codepath.apps.HW4TwitterFragments.R;
-import com.codepath.apps.HW4TwitterFragments.Adapter.TweetsArrayAdapter;
-import com.codepath.apps.HW4TwitterFragments.REST.TwitterClient;
-import com.codepath.apps.HW4TwitterFragments.models.Tweet;
-import com.loopj.android.http.JsonHttpResponseHandler;
-
-import org.apache.http.Header;
-import org.json.JSONArray;
-
-import java.util.ArrayList;
 
 
 public class TimelineActivity extends ActionBarActivity {
@@ -157,9 +144,10 @@ public class TimelineActivity extends ActionBarActivity {
 */
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_timeline, menu);
+        getMenuInflater().inflate(R.menu.menu_timeline, menu);
         return true;
     }
 
@@ -170,12 +158,26 @@ public class TimelineActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        /*
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_compose) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onProfileView(MenuItem mi)
+    {
+        //launch profile view
+        //init an Intent
+        Intent i = new Intent(this, ProfileActivity.class);
+        startActivityForResult(i, RESULT_OK);
+    }
+
+    public void onRefreshAction(MenuItem mi)
+    {
+        //refresh timeline content
     }
 
     //return the order of the fragments in the view pager
