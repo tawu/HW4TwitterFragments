@@ -24,9 +24,45 @@ public class MentionsTimelineFragment extends TweetsListFragment
     {
         super.onCreate(savedInstanceState);
 
+
         //get the client
         client = TwitterApplication.getRestClient();
         populateTimeLine();
+    }
+
+
+    // Append more data into the adapter
+    public void customLoadMoreDataFromApi(int offset)
+    {
+        // This method probably sends out a network request and appends new data items to your adapter.
+        // Use the offset value and add it as a parameter to your API request to retrieve paginated data.
+        // Deserialize API response and then construct new objects to append to the adapter
+
+        client.getMentionsTimeline(new JsonHttpResponseHandler() {
+            // SUCCESS
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                //Log.d("DEBUG", response.toString());
+
+                //get JSON
+                //deserilize JSON
+                //create models and add to adapter
+                //load the model data into listview
+                clearAll();
+                addAll(Tweet.fromJSONArray(response));
+
+                Log.d("DEBUG", "Test");
+
+            }
+
+            // FAILURE
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                Log.d("DEBUG", errorResponse.toString());
+            }
+        });
+
     }
 
     // send an API request to get the timeline json

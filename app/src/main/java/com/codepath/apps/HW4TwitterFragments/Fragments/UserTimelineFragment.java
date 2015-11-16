@@ -25,11 +25,17 @@ public class UserTimelineFragment extends TweetsListFragment
     {
         super.onCreate(savedInstanceState);
 
+
         //get the client
         client = TwitterApplication.getRestClient();
         populateTimeLine();
     }
 
+
+    // Append more data into the adapter
+    public void customLoadMoreDataFromApi(int offset)
+    {
+    }
 
     // Creates a new fragment given the screen name
     //UserTimelineFragment.newInstance("someScreenName");

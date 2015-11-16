@@ -85,7 +85,8 @@ public class TwitterClient extends OAuthBaseClient {
 		// specify the params
 		RequestParams params = new RequestParams();
 		params.put("count", 25);
-		params.put("screen_name", screen_name);
+		if(screen_name != null)
+			params.put("screen_name", screen_name);
 
 		// execute the request
 		getClient().get(apiUrl, params, handler);

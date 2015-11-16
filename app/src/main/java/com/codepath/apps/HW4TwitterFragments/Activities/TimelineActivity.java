@@ -9,6 +9,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.codepath.apps.HW4TwitterFragments.Fragments.HomeTimelineFragment;
@@ -178,6 +181,22 @@ public class TimelineActivity extends ActionBarActivity {
     public void onRefreshAction(MenuItem mi)
     {
         //refresh timeline content
+    }
+
+
+    public void onProfileView(View view)
+    {
+        //launch profile view
+        //init an Intent
+        //TextView tvUserScreenName =  (TextView)view.findViewById(R.id.tvUserScreenName);
+        //String screenName = tvUserScreenName.getText().toString();
+        Toast.makeText(this, "profileclick: ",Toast.LENGTH_SHORT).show();
+ /*       Intent i = new Intent(this, ProfileActivity.class);
+        TextView tvUserScreenName =  (TextView)view.findViewById(R.id.tvUserScreenName);
+        String screenName = tvUserScreenName.getText().toString();
+        i.putExtra("screen_name", screenName);
+        startActivityForResult(i, RESULT_OK);
+ */
     }
 
     //return the order of the fragments in the view pager
